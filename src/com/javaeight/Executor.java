@@ -1,14 +1,24 @@
 package com.javaeight;
 
-import java.util.function.Function;
-
 /**
  * Created by EM on 24.09.2015.
  */
 public class Executor {
 
     public static void main(String[] args) {
-        OperationExecutor<String, String> function = (s) -> s.toUpperCase();
-        System.out.println(function.execute("Some"));
+        String string = "Some";
+
+        Converter<String, Long> function1 = Long::valueOf;
+        System.out.println(function1.convert("5"));
+
+        Converter<String, Double> function2 = Double::valueOf;
+        System.out.println(function2.convert("5"));
+
     }
+
+    private void workingWithStreams() {
+        Company company = new Company();
+        company.getEmployees();
+    }
+
 }
